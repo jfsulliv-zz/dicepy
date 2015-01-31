@@ -115,7 +115,7 @@ def main(name, argv):
 
     wordlist = []
     for line in df:
-        if not isAscii(line):
+        if not isAscii(line) or "'s" in line:
             continue
         wordlist.append(line)
 
@@ -141,12 +141,12 @@ def main(name, argv):
     passphrase = diceware(words, wordlist, sep) 
     if out:
         of.write(passphhrase)
+        print("Password written to " + out)
         of.close()
     else:
         print("")
         print(passphrase)
         print("")
-    print("Goodbye!")
     sys.exit()
 
 if __name__=="__main__":
