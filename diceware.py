@@ -53,8 +53,15 @@ def usage(pname):
     PROPER USAGE
     ============
     For best results, the following settings should be used.
-    1) At least 48 bits of entropy.
-    2) 
+    1) At least 48 bits of entropy. More entropy is better.
+    2) A dictinary file with at least 65536 words. Less words in a 
+        dictionary file will mean less password entropy.
+    3) The word seperator should not be an alphabetic character, as
+        this can create collisions!
+
+        Example:
+            let.ing
+            letting
 
     """ %pname )
 def main(name, argv):
