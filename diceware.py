@@ -98,7 +98,7 @@ def main(name, argv):
 
     # Check the options for legality
     if out != None:
-        of = open(outfile, 'rw')
+        of = open(out, 'w')
 
     if entropy <= 0 and words <= 0:
         print("Error - Must specify positive word count or entropy.")
@@ -140,7 +140,8 @@ def main(name, argv):
     print("...")
     passphrase = diceware(words, wordlist, sep) 
     if out:
-        of.write(passphhrase)
+        of.write(passphrase)
+        of.write("\n")
         print("Password written to " + out)
         of.close()
     else:
